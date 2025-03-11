@@ -83,3 +83,64 @@ series = pd.read_csv('Csv_file/foods.csv', index_col='First Name', header=0)
 loc = series.loc['Anna']
 print(loc)
 
+# How to check NaN data in Datafile & DataFrame
+print('-------- NBA ---------')
+nba = pd.read_csv('Csv_file/nba.csv').squeeze('columns')
+print(nba)
+
+column = nba.columns
+print(column)
+
+row = nba.axes
+print(row)
+
+info = nba.info()
+print('----------------------- information of data -------------------------')
+print('same as', info)
+
+print('------------- columns check simple')
+
+nba = pd.read_csv('Csv_file/nba.csv')
+
+col1 = nba.Team
+print(col1)
+
+check = nba[['Team', 'Name', "Position"]]
+print(check)
+
+# let's try to play with label
+
+name = nba['Name'].copy()  # copy() method do it parent data set
+print(name)
+
+a1 = name.iloc[0] = 'Hello World!'
+a2 = name.head()
+print(name)
+print(a2)
+
+# How to add columns and values in Series
+# simple way to
+
+simple = nba["Sports"] = 'Cricket'
+
+print(nba)
+
+multi = nba['Salary'] * 2
+multi_or = nba['Salary'].mul(2)
+
+Multi = nba['Salary_Double'] = multi_or
+print(nba)
+
+# Subtraction do it
+sub = nba['Weight'].sub(-4)
+
+Sub = nba["Weight_Loss"] = sub
+print(nba)
+
+# How to Values_count() Method work
+a_count = nba['Team'].value_counts()
+print(a_count)
+
+# Now Average of Salary by
+avg = nba['Salary'].value_counts(normalize=True) * 100
+print(avg)
