@@ -1,4 +1,4 @@
-# lets me do it Missing values check
+# lets me do it Missing values check Also Fill '0', '' values
 import pandas as pd
 
 nba = pd.read_csv('Csv_file/nba.csv')
@@ -18,5 +18,23 @@ print(a5)
 
 drop = nba.dropna()
 print(drop)
+
+# How can Be Missing values fill to fillna() Method
+
+nba["Salary"] = nba["Salary"].fillna(0)
+
+print(nba)
+
+nba['College'] = nba['College'].fillna(value='Something etc')
+
+print(nba)
+
+last_correct = nba.fillna(0.0)
+
+print(last_correct)  # its means all string or data datatype also fill to 0.0
+
+print(nba.info())
+
+
 
 

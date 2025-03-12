@@ -1,4 +1,4 @@
-# The 'sort index' method use to Sort data in Ascending or Descending order
+# The 'sort index' method uses to Sort data in Ascending or Descending order
 # More over head and tail using first and last data show:
 
 import pandas as pd
@@ -63,7 +63,7 @@ print(to_loc)  # Start to End point values show
 last = Pokemon.iloc[-9:-1]
 print('this is location:', last)
 
-# How to index label show to series model:
+# How to index label show to a series model:
 
 foods = pd.read_csv('Csv_file/foods.csv', index_col='First Name').squeeze('columns')
 
@@ -131,7 +131,7 @@ multi_or = nba['Salary'].mul(2)
 Multi = nba['Salary_Double'] = multi_or
 print(nba)
 
-# Subtraction do it
+# Subtraction does it
 sub = nba['Weight'].sub(-4)
 
 Sub = nba["Weight_Loss"] = sub
