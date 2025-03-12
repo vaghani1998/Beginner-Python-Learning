@@ -13,8 +13,8 @@ print(a2)
 a3 = nba.dropna(subset=['College', 'Team'])
 print(a3)
 
-a4 = nba.dropna(how='all')
-print(a4)
+a5 = nba.dropna(how='all')
+print(a5)
 
 drop = nba.dropna()
 print(drop)
