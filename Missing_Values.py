@@ -35,6 +35,27 @@ print(last_correct)  # its means all string or data datatype also fill to 0.0
 
 print(nba.info())
 
+# How to astype means Datatype of column check
+
+nba['Salary'] = nba['Salary'].astype(int)
+
+print(nba)
+
+print(nba.dtypes)
+
+# How to reduce the file Size
+
+nba.info()
+
+nba['Position'] = nba['Position'].astype('category')
+
+nba['Team'] = nba['Team'].astype('category')
+
+print(nba)
+
+nba.info()
+
+
 
 
 

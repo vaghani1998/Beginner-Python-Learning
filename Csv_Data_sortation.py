@@ -144,3 +144,23 @@ print(a_count)
 # Now Average of Salary by
 avg = nba['Salary'].value_counts(normalize=True) * 100
 print(avg)
+
+# Sort_Values() Method how to work:
+print('-------- Sort_Values ----------')
+
+sorting = nba.sort_values(by='Name', ascending=False)
+sorting.head(15)
+print(sorting)
+
+# How-to nun Values position
+
+pos = nba.sort_values(by='Salary_Double', na_position='first')
+print(pos)
+
+# if I short two columns results
+
+two = nba.sort_values(by=['Name', 'Team'], ascending=[True, False])
+print(two)
+
+Another = nba.sort_values(['Salary_Double', 'Weight_Loss'])
+print(Another)
