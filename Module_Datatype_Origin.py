@@ -15,3 +15,16 @@ emp['Team'] = emp['Team'].fillna('Government')
 print(emp.head(10))
 emp.info()
 
+# How-to Data Filter in dataset (calculation)
+
+emp["Team"] = emp["Team"] == "Marketing"
+emp['Salary'] = emp['Salary'] > 130590
+var = emp[emp['Bonus %'] < 4.17]
+print(var)
+print(emp)
+emp.info()
+
+
+
+
+
