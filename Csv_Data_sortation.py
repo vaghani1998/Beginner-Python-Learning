@@ -164,3 +164,11 @@ print(two)
 
 Another = nba.sort_values(['Salary_Double', 'Weight_Loss'])
 print(Another)
+
+# How-to the sort data by index
+
+nba.sort_index()
+print(nba)
+
+index_D = nba.sort_index(ascending=False)
+print(index_D)
