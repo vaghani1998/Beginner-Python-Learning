@@ -172,3 +172,20 @@ print(nba)
 
 index_D = nba.sort_index(ascending=False)
 print(index_D)
+
+# lets the do it Ranking method
+
+new_nba = pd.read_csv('Csv_file/nba.csv').dropna(how='all')
+
+new_nba['Salary'] = new_nba['Salary'].rank()
+
+new_nba['Salary'] = new_nba['Salary'].rank(ascending=True)
+
+new_nba['Salary'] = new_nba['Salary'].rank(ascending=False).fillna(0).astype(int)
+
+new_nba['Salary Rank'] = new_nba['Salary'].rank(ascending=False).fillna(0).astype(int)
+
+new_nba.sort_values('Salary', ascending=True).head(10)
+
+print(new_nba)
+
