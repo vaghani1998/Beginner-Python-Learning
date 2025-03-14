@@ -36,7 +36,7 @@ print(emp_lat)
 emp_lat.info()
 
 # Employees who are either senior management OR started before january 1st, 1990
-
+print('Employees who are either senior management OR started before january 1st, 1990')
 emp_lat = pd.read_csv('Csv_file/employees.csv', parse_dates=['Start Date'])
 
 senior_Manager = emp_lat['Senior Management']
@@ -45,7 +45,7 @@ emp_lat = emp_lat[senior_Manager | start_date]
 print(emp_lat)
 
 # First Name is Robert who works in client Services OR start date after 01/06/2016
-
+print('First Name is Robert who works in client Services OR start date after 01/06/2016')
 emp_work = pd.read_csv('Csv_file/employees.csv', parse_dates=['Start Date']).dropna(how='all')
 
 client_Name = emp_work['First Name'] == 'Robert'
