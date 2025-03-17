@@ -75,5 +75,40 @@ emp_duplicate.info()
 opposite = emp_duplicate[~emp_duplicate['First Name'].duplicated(keep=False)]
 print(opposite)
 
+# Drop Duplicate Method
+
+emp_duplicate = emp_duplicate.drop_duplicates('Team')
+
+emp_duplicate = emp_duplicate.drop_duplicates('Team', keep='first')
+
+emp_duplicate = emp_duplicate.drop_duplicates('First Name', keep=False)
+print(emp_duplicate)
+
+# How-to Two column drop_duplicate
+emp_duplicate = emp_duplicate.drop_duplicates(['Senior Management', 'Bonus %'])
+print(emp_duplicate)
+
+# How to check unique values in column
+emp_uniq = emp_duplicate['Team'].nunique()
+emp_uniq1 = emp_duplicate['Team'].nunique(dropna=True)
+print(emp_uniq)
+print(emp_uniq1)
+
+# How-to set index and reset index methods:
+nba = pd.read_csv('Csv_file/nba.csv')
+
+nba = nba.set_index('Team')
+
+nba = nba.reset_index(drop=True)
+
+nba = nba.iloc[6]
+
+nba = nba.iloc[[1, 3]]
+print('hello world!', nba)
+
+print(nba)
+nba.info()
+
+
 
 
