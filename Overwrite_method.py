@@ -101,6 +101,6 @@ print(extract)
 
 # How to stack method work:
 series = pd.read_csv('Csv_file/employees.csv', index_col=['Team', 'First Name'])
-series = series.sort_index()
-Stack = series.stack().to_frame()
+All = series.sort_index()
+Stack = All.stack().to_frame()
 print(Stack)
