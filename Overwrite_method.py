@@ -98,3 +98,9 @@ extract = pd.read_csv('Csv_file/employees.csv', parse_dates=['Start Date'], date
 index_tru = tuple(extract.index[2:6])
 print(index_tru)
 print(extract)
+
+# How to stack method work:
+series = pd.read_csv('Csv_file/employees.csv', index_col=['Team', 'First Name'])
+series = series.sort_index()
+Stack = series.stack()
+print(Stack)
