@@ -86,10 +86,15 @@ print(index1)
 
 exe = pd.read_csv('Csv_file/employees.csv', parse_dates=['Start Date'], date_format='%m-%d-%Y')
 exe['Team'] = exe['Team'].fillna('Sales Mens')
-exe1 = exe['Start Date'].dtypes
-print(exe1)
 exe = exe.set_index(keys=['Team', 'Start Date'])
 # exe = exe.sort_index(ascending=False)
 exe = exe.sort_index(ascending=[True, False])
+
 exe.info()
 print(exe)
+
+# How to Tuple format in values:
+extract = pd.read_csv('Csv_file/employees.csv', parse_dates=['Start Date'], date_format='%m-%d-%Y', index_col=['Team', 'Start Date']).sort_index()
+index_tru = tuple(extract.index[2:6])
+print(index_tru)
+print(extract)
