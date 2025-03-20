@@ -33,6 +33,12 @@ print(quarters)
 quarter = quarters.melt(id_vars='Salesman')
 print(quarter)
 
+# How-to Group by received dataset
+
+grouped = pivot.groupby(by=['Salesman'], observed=True)['Revenue'].sum()
+print(grouped)
+
+
 
 
 
