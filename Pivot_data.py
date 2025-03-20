@@ -38,7 +38,39 @@ print(quarter)
 grouped = pivot.groupby(by=['Salesman'], observed=True)['Revenue'].sum()
 print(grouped)
 
+# How-to get-group by each sector values show:
 
+fortune = pd.read_csv('Csv_file/fortune1000.csv', index_col='Rank')
+print('check', fortune)
+fortune.info()
 
+sector = fortune.groupby('Sector')
+length = len(sector)
+size = sector.size()
+print(length)
+print(size)
 
+get_group = sector.get_group('Financials').sort_index()
+print(get_group)
 
+# Now we can observation all sectors' revenue:
+# Step of 1st Create Group then it group calculation with revenue filed.
+
+total_sector = sector['Revenue'].sum()
+print(total_sector)  # this is a Direct method
+
+total_sector1 = fortune[fortune['Sector'] == 'Business Services']['Revenue'].sum()
+print('Revenue of Business Services:', total_sector1)  # this is an indirect method
+
+# Check how much employee work in sector by:
+
+total_emp = sector['Employees'].sum()
+print(total_emp)
+
+two_col = sector[['Revenue', 'Profits']].sum()
+print(two_col)
+
+# How-to aggregate function work:
+
+sector_agg = sector.agg({'Profits': 'max', 'Revenue': 'min', 'Employees': 'mean'})
+print(sector_agg)
