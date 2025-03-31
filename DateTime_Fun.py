@@ -70,5 +70,25 @@ print(day_of_year)
 day_name = check.dt.day_name()
 print(day_name)
 
+# How to Work Date-offSet Object
+
+print('Check Offset Object')
+
+ibm = pd.read_csv('Csv_file/ibm.csv', parse_dates=['Date'], index_col='Date').sort_index()
+ibm.head()
+
+print(ibm)
+
+stock = ibm.index
+print(stock)
+
+# To check Birthday every year
+birthday = pd.date_range(start='1999-10-27', end='2023-03-31', freq='Y')
+print('checking', len(birthday))
+
+# Example with DateOffset (assuming you have a datetime object named 'stock')
+stock = pd.to_datetime('2023-01-01')
+off_set = stock + pd.DateOffset(day=5)
+print('Now Results is', off_set)
 
 
