@@ -48,3 +48,27 @@ business = pd.Series(pd.date_range(start='2025-01-01', periods=20, freq='B'))  #
 print(business)
 weekend = pd.Series(pd.date_range(start='2025-01-01', end='2025-01-31', freq='W'))  # this means only show sunday
 print(weekend)
+
+# Now We have a check to Datetime all attribute:
+
+check = pd.Series(pd.date_range(start='2000-01-01', end='2020-12-31', freq='24D 3h'))
+
+total_5 = check.head()
+print(total_5)
+
+# This is all attribute to check more details with:
+day = check.dt.day
+print(day)
+month = check.dt.month
+print(month)
+year = check.dt.year
+print(year)
+hour = check.dt.hour
+print(hour)
+day_of_year = check.dt.day_of_year
+print(day_of_year)
+day_name = check.dt.day_name()
+print(day_name)
+
+
+
